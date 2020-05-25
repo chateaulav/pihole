@@ -3,19 +3,19 @@ Content Pack for piHole with Graylog
 
 ### Content Pack includes:
 
-* GROK patterns:  
+* **GROK patterns**:  
 ``Defines all new fields to be set when matched in pipeline``
   * DNSMASQ
   * PIHOLE
   
-* Input:  
+* **Input**:  
 ``Sets a seperate input for just pihole DNS Logs``
   * piHole Syslog (``Listen 0.0.0.0:1515/UDP``)
   
-* Extractor:
+* **Extractor**:
   * application_name (Looking for ``pihole``)
   
-* Pipeline:  
+* **Pipeline**:  
 ``Creates Multiple fields to enable stronger queries and analytics``
   * -1 Rules:
     * dnsmasq pihole list
@@ -28,10 +28,10 @@ Content Pack for piHole with Graylog
   * 2 Rules:
     * threatintel (2) inflate
   
-* Lookup Table\Cache:
+* **Lookup Table\Cache**:
   * geolite2-city (``/etc/graylog/server/GeoLite2-City.mmdb``)
   
-* Dashboard called **DNS Intel**:
+* **Dashboard called ``DNS Intel``**:
   * DNS Location Requested IP (from answers)
   * DNS Activities (24h)
   * Thread Names (24h)
