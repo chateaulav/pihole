@@ -1,5 +1,7 @@
 # Graylog3 supported
-Content Pack for piHole with Graylog
+``Content Pack for piHole with Graylog``  
+  
+Built and based off of https://jalogisch.de/2017/der-eigene-dns-resolver-zuhause/, your own dns resolver (at home) by Jan Doberstein. Includes setting GeoIP, so ensure you download the current City db from Maxmind, and install the current Threat intelligence content packs. A seperate input is established to collect only pihole syslog traffic.
 
 ### Content Pack includes:
 
@@ -41,4 +43,3 @@ Content Pack for piHole with Graylog
   * DNS Clients (24h)
   * DNS Querys (24h)
   * Owning Companies (24h)
-
