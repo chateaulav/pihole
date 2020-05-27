@@ -20,15 +20,15 @@ Built and based off of https://jalogisch.de/2017/der-eigene-dns-resolver-zuhause
 * **Pipeline**:  
 ``Creates Multiple fields to enable stronger queries and analytics``
   * -1 Rules:
-    * dnsmasq pihole list
-    * dnsmasq split
+    * ``dnsmasq pihole list``
+    * ``dnsmasq split``
   * 0 Rules:
-    * PiHole GeoIP Set
+    * ``PiHole GeoIP Set``
   * 1 Rules:
-    * threatintel (dnsmasq)
-    * dnsmasq clean message
+    * ``threatintel (dnsmasq)``
+    * ``dnsmasq clean message``
   * 2 Rules:
-    * threatintel (2) inflate
+    * ``threatintel (2) inflate``
   
 * **Lookup Table\Cache**:
   * geolite2-city (``/etc/graylog/server/GeoLite2-City.mmdb``)
