@@ -4,21 +4,6 @@
 Built and based off of https://jalogisch.de/2017/der-eigene-dns-resolver-zuhause/, your own dns resolver (at home) by Jan Doberstein. Includes setting GeoIP, so ensure you download the current City db from Maxmind, and install the current Threat intelligence content packs. A seperate input is established to collect only pihole syslog traffic.
 
 ## Syslog requirements
-**rsyslog** *Not recommended as you will get other unrelated logs*
-```
-#vi /etc/rsyslog.d/10-pihole.conf
-`*.* @server.ip:1515;RSYSLOG_SyslogProtocol23Format
-
-module(load="imfile" PollingInterval="10")
-
-input(type="imfile"
-File="/var/log/pihole.log"
-StateFile="/var/run/pihole.log.state"
-Tag="pihole"
-Severity="info"
-Facility="local7")`
-```
-
 **syslog-ng** *Best option, simple and only sends pihole data*
 ```
 #apt install syslog-ng -y
@@ -27,6 +12,7 @@ source s_pihole_log { file("/var/log/pihole.log"); };
 destination d_graylog {udp("server.ip" port(1515)); };
 log { source(s_pihole_log); destination(d_graylog); };
 ```
+
 
 ### Content Pack includes:
 
@@ -41,7 +27,10 @@ log { source(s_pihole_log); destination(d_graylog); };
   
 * **Extractor**:
   * application_name (Looking for ``pihole``)
-  
+
+  This extractor is contingent on how you implemented your data ingestion of pihole and can be unreliable a times. Recommended correction is to delete the extractor from your input, and update the pipeline rules for ``dnsmasq pihole list`` & ``dnsmasq split``. The when condition should be changed from ``has_field("application_name")`` to ``contains(to_string($message.source),"IP")`` where **IP** is the IP of your pihole server.
+
+
 * **Pipeline**:  
 ``Creates Multiple fields to enable stronger queries and analytics``
   * -1 Rules:
