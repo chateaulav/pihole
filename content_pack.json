@@ -814,7 +814,7 @@
             "v": "1",
             "data": {
                 "name": "DNSMASQ",
-                "pattern": "%{SYSLOGTIMESTAMP:query_timestamp} %{WORD: programname}\\[%{POSINT:procid}\\]: %{WORD:query_action}(?:\\[%{WORD:query_type}\\]|%{SPACE}) %{NOTSPACE:query_domain} (?:from %{NOTSPACE:query_source}|is %{NOTSPACE:query_answer}|to %{NOTSPACE:query_target})"
+                "pattern": "%{SYSLOGTIMESTAMP:query_timestamp} %{WORD:programname}\\[%{POSINT:procid}\\]: %{WORD:query_action}(?:\\[%{WORD:query_type}\\]|%{SPACE}) %{NOTSPACE:query_domain} (?:from %{NOTSPACE:query_source}|is %{NOTSPACE:query_answer}|to %{NOTSPACE:query_target})"
             },
             "constraints": [{
                 "type": "server-version",
@@ -830,7 +830,7 @@
             "v": "1",
             "data": {
                 "name": "PIHOLE",
-                "pattern": "%{SYSLOGTIMESTAMP: query_timestamp} %{WORD: programname}\\[%{POSINT: procid}]: %{NOTSPACE: query_list} %{NOTSPACE: query_action} %{NOTSPACE: query_domain} .* %{NOTSPACE: query_answer}"
+                "pattern": "%{SYSLOGTIMESTAMP:query_timestamp} %{WORD:application_name} %{WORD:programname}\\[%{POSINT: procid}]:%{NOTSPACE:query_list} %{NOTSPACE:query_action} %{NOTSPACE:query_domain} .* %{NOTSPACE:query_answer}"
             },
             "constraints": [{
                 "type": "server-version",
