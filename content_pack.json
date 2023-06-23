@@ -368,7 +368,7 @@
                             "widget": {
                                 "9346af21-e18d-4014-a7e5-7b7944bd0b20": "DNS Location Requested IP (from answers)",
                                 "40fe2a5d-109b-4698-b0ab-74871d2e3363": "DNS Activities (24h)",
-                                "9d4133c9-d7dd-43c6-ab35-c40c47152133": "Thread Names (24h)",
+                                "9d4133c9-d7dd-43c6-ab35-c40c47152133": "Threat Names (24h)",
                                 "125ca269-d7cc-4ad8-b1b8-8b55e6fe5bc6": "Blocked Domains (24h)",
                                 "375151f2-1557-4c5c-8457-fe4125242308": "Blackholed Requests (24h)",
                                 "6141e765-67f7-41a8-b696-04298bd125d2": "Threat Indicated (24h)",

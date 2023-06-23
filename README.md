@@ -50,7 +50,7 @@ log { source(s_pihole_log); destination(d_graylog); };
 * **Dashboard called ``DNS Intel``**:
   * DNS Location Requested IP (from answers)
   * DNS Activities (24h)
-  * Thread Names (24h)
+  * Threat Names (24h)
   * Blocked Domains (24h)
   * Blackholed Requests (24h)
   * Threat Indicated (24h)
